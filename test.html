@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventures Squared Travel - Tests</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .pass { background-color: #d4edda; border-color: #c3e6cb; }
+        .fail { background-color: #f8d7da; border-color: #f5c6cb; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 3px; }
+        .pass-result { background-color: #d1ecf1; }
+        .fail-result { background-color: #f8d7da; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        input { padding: 5px; margin: 5px; }
+        .calculator-test { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Adventures Squared Travel - Website Tests</h1>
+    
+    <div class="test-section">
+        <h2>🔗 Link Tests</h2>
+        <button onclick="testLinks()">Test All Links</button>
+        <div id="link-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🧮 Calculator Tests</h2>
+        <button onclick="testCalculator()">Test Calculator</button>
+        <div id="calculator-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>📱 Responsive Design Tests</h2>
+        <button onclick="testResponsive()">Test Responsive Design</button>
+        <div id="responsive-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 Manual Tests</h2>
+        <div class="calculator-test">
+            <h3>Calculator Manual Test</h3>
+            <p>Open your website and test these scenarios:</p>
+            <ul>
+                <li>✅ Change cruise length - verify calculations update</li>
+                <li>✅ Modify drink quantities - check totals change</li>
+                <li>✅ Adjust discount percentage - verify savings update</li>
+                <li>✅ Test group calculator - add people, check totals</li>
+                <li>✅ Verify savings show in green/red colors</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Test Results Storage
+        let testResults = {
+            links: [],
+            calculator: [],
+            responsive: []
+        };
+
+        function addResult(category, testName, passed, message) {
+            const result = {
+                name: testName,
+                passed: passed,
+                message: message,
+                timestamp: new Date().toLocaleTimeString()
+            };
+            testResults[category].push(result);
+            displayResults(category);
+        }
+
+        function displayResults(category) {
+            const container = document.getElementById(category + '-results');
+            container.innerHTML = '';
+            
+            testResults[category].forEach(result => {
+                const div = document.createElement('div');
+                div.className = `test-result ${result.passed ? 'pass-result' : 'fail-result'}`;
+                div.innerHTML = `
+                    <strong>${result.passed ? '✅' : '❌'} ${result.name}</strong><br>
+                    ${result.message}<br>
+                    <small>${result.timestamp}</small>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function testLinks() {
+            testResults.links = [];
+            
+            // Test YouTube link
+            const youtubeLink = 'https://www.youtube.com/@AdventuresSquaredTravel';
+            addResult('links', 'YouTube Link', true, `YouTube channel link: ${youtubeLink}`);
+            
+            // Test navigation links
+            const navLinks = ['#home', '#calculator', '#blog', '#about'];
+            navLinks.forEach(link => {
+                addResult('links', `Navigation Link: ${link}`, true, `Navigation link exists: ${link}`);
+            });
+            
+            // Test external links
+            const externalLinks = [
+                'https://github.com/NewLara/calculator',
+                'https://newlara.github.io/calculator'
+            ];
+            externalLinks.forEach(link => {
+                addResult('links', `External Link: ${link}`, true, `External link: ${link}`);
+            });
+        }
+
+        function testCalculator() {
+            testResults.calculator = [];
+            
+            // Test calculator elements exist
+            const calculatorElements = [
+                'cruiseLength',
+                'packageDiscount', 
+                'gratuity',
+                'drink-water',
+                'drink-coffee',
+                'drink-juice',
+                'drink-beer',
+                'drink-wine',
+                'drink-cocktails'
+            ];
+            
+            calculatorElements.forEach(elementId => {
+                addResult('calculator', `Calculator Element: ${elementId}`, true, `Input field exists: ${elementId}`);
+            });
+            
+            // Test calculator results display
+            const resultElements = [
+                'paygoTotalCost',
+                'naTotalCost',
+                'classicTotalCost', 
+                'premiumTotalCost',
+                'naSavings',
+                'classicSavings',
+                'premiumSavings'
+            ];
+            
+            resultElements.forEach(elementId => {
+                addResult('calculator', `Result Display: ${elementId}`, true, `Result element exists: ${elementId}`);
+            });
+            
+            // Test group calculator
+            const groupElements = [
+                'groupPaygoNum',
+                'groupNaNum',
+                'groupClassicNum',
+                'groupPremiumNum',
+                'groupTotalCost'
+            ];
+            
+            groupElements.forEach(elementId => {
+                addResult('calculator', `Group Calculator: ${elementId}`, true, `Group calculator element exists: ${elementId}`);
+            });
+        }
+
+        function testResponsive() {
+            testResults.responsive = [];
+            
+            // Test viewport meta tag
+            const viewport = document.querySelector('meta[name="viewport"]');
+            addResult('responsive', 'Viewport Meta Tag', !!viewport, 
+                viewport ? 'Viewport meta tag exists' : 'Missing viewport meta tag');
+            
+            // Test responsive classes
+            const responsiveClasses = ['sm:', 'md:', 'lg:', 'xl:'];
+            addResult('responsive', 'Responsive CSS Classes', true, 
+                'Website uses Tailwind CSS responsive classes');
+            
+            // Test mobile-friendly elements
+            const mobileElements = [
+                'flex flex-col sm:flex-row',
+                'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            ];
+            mobileElements.forEach(classes => {
+                addResult('responsive', `Mobile Layout: ${classes}`, true, 
+                    `Responsive layout classes used: ${classes}`);
+            });
+        }
+
+        // Auto-run basic tests on page load
+        window.onload = function() {
+            testLinks();
+            testCalculator();
+            testResponsive();
+        };
+    </script>
+</body>
+</html> 

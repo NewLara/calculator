@@ -1,0 +1,17 @@
+{
+  "name": "adventures-squared-travel-tests",
+  "version": "1.0.0",
+  "description": "E2E tests for Adventures Squared Travel website",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "install-browsers": "playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "keywords": ["travel", "testing", "e2e", "calculator"],
+  "author": "NewLara",
+  "license": "MIT"
+} 
