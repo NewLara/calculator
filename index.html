@@ -233,19 +233,46 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="packageDiscount" class="font-semibold block mb-1">Package Discount (%)</label>
-                                <input type="number" id="packageDiscount" class="input-field" value="35" min="0" max="100">
-                            </div>
-                            <div>
                                 <label for="gratuity" class="font-semibold block mb-1">Gratuity / Tip (%)</label>
                                 <input type="number" id="gratuity" class="input-field" value="20" min="0" max="100">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Section 2: Daily Drinks -->
+                    <!-- Section 2: Drink Package Pricing -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">2. Your Daily Drinks</h3>
+                        <h3 class="text-lg font-bold mb-3 text-gray-800">2. Drink Package Pricing</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label for="naPackagePrice" class="font-semibold block mb-1">Non-Alcoholic Package ($/day)</label>
+                                <input type="number" id="naPackagePrice" class="input-field" value="39.99" min="0" step="0.01">
+                            </div>
+                            <div>
+                                <label for="naPackageDiscount" class="font-semibold block mb-1">Non-Alcoholic Discount (%)</label>
+                                <input type="number" id="naPackageDiscount" class="input-field" value="10" min="0" max="100">
+                            </div>
+                            <div>
+                                <label for="classicPackagePrice" class="font-semibold block mb-1">Classic Package ($/day)</label>
+                                <input type="number" id="classicPackagePrice" class="input-field" value="80.99" min="0" step="0.01">
+                            </div>
+                            <div>
+                                <label for="classicPackageDiscount" class="font-semibold block mb-1">Classic Discount (%)</label>
+                                <input type="number" id="classicPackageDiscount" class="input-field" value="10" min="0" max="100">
+                            </div>
+                            <div>
+                                <label for="premiumPackagePrice" class="font-semibold block mb-1">Premium Package ($/day)</label>
+                                <input type="number" id="premiumPackagePrice" class="input-field" value="93.99" min="0" step="0.01">
+                            </div>
+                            <div>
+                                <label for="premiumPackageDiscount" class="font-semibold block mb-1">Premium Discount (%)</label>
+                                <input type="number" id="premiumPackageDiscount" class="input-field" value="10" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Daily Drinks -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-lg font-bold mb-3 text-gray-800">3. Your Daily Drinks</h3>
                         <table class="w-full text-left">
                             <thead>
                                 <tr>
@@ -262,70 +289,69 @@
 
                 <!-- Right Column: Results -->
                 <div class="lg:col-span-2 space-y-4">
-                    <!-- Section 3: Per-Person Analysis -->
+                    <!-- Section 4: Pay-As-You-Go Analysis -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">3. Per-Person Cost Analysis</h3>
+                        <h3 class="text-lg font-bold mb-3 text-gray-800">4. Pay-As-You-Go Cost Analysis</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full min-w-max text-center">
                                 <thead>
                                     <tr>
                                         <th class="table-cell header-cell text-left">Cost Breakdown</th>
                                         <th class="table-cell header-cell">Pay-As-You-Go</th>
-                                        <th class="table-cell header-cell">Non-Alcoholic</th>
-                                        <th class="table-cell header-cell">Classic Package</th>
-                                        <th class="table-cell header-cell">Premium Package</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="table-cell text-left font-semibold">Package Price Limits</td>
-                                        <td class="table-cell italic">N/A</td>
-                                        <td class="table-cell font-medium">$7</td>
-                                        <td class="table-cell font-medium">$10</td>
-                                        <td class="table-cell font-medium">$19</td>
-                                    </tr>
-                                    <tr>
                                         <td class="table-cell text-left">Daily Drink Cost (Pre-Tip)</td>
                                         <td class="table-cell results-cell" id="paygoDailyCost">$0.00</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell text-gray-400">-</td>
                                     </tr>
                                     <tr class="bg-blue-50">
                                         <td class="table-cell text-left font-bold">Total A La Carte Cost (with Tip)</td>
                                         <td class="table-cell results-cell text-lg" id="paygoTotalCost">$0.00</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell text-gray-400">-</td>
                                     </tr>
-                                    <tr><td colspan="5" class="py-2"></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Drink Package Analysis -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-lg font-bold mb-3 text-gray-800">5. Drink Package Cost Analysis</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-max text-center">
+                                <thead>
                                     <tr>
-                                        <td class="table-cell text-left">Package Price (Discounted + Tip)</td>
-                                        <td class="table-cell text-gray-400">-</td>
+                                        <th class="table-cell header-cell text-left">Package Type</th>
+                                        <th class="table-cell header-cell">Package Price Limits</th>
+                                        <th class="table-cell header-cell">Package Price (Discounted + Tip)</th>
+                                        <th class="table-cell header-cell">Extra Costs (Drinks Over Limit)</th>
+                                        <th class="table-cell header-cell">Total Cost with Package</th>
+                                        <th class="table-cell header-cell">SAVINGS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-cell text-left font-semibold">Non-Alcoholic</td>
+                                        <td class="table-cell font-medium">$7</td>
                                         <td class="table-cell results-cell" id="naPackagePrice">$0.00</td>
-                                        <td class="table-cell results-cell" id="classicPackagePrice">$0.00</td>
-                                        <td class="table-cell results-cell" id="premiumPackagePrice">$0.00</td>
+                                        <td class="table-cell results-cell" id="naExtraCost">$0.00</td>
+                                        <td class="table-cell results-cell text-lg" id="naTotalCost">$0.00</td>
+                                        <td class="table-cell results-cell text-lg" id="naSavings">$0.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="table-cell text-left">Extra Costs (Drinks Over Limit)</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell results-cell" id="naExtraCost">$0.00</td>
+                                        <td class="table-cell text-left font-semibold">Classic Package</td>
+                                        <td class="table-cell font-medium">$10</td>
+                                        <td class="table-cell results-cell" id="classicPackagePrice">$0.00</td>
                                         <td class="table-cell results-cell" id="classicExtraCost">$0.00</td>
-                                        <td class="table-cell results-cell" id="premiumExtraCost">$0.00</td>
-                                    </tr>
-                                    <tr class="bg-blue-50">
-                                        <td class="table-cell text-left font-bold">Total Cost with Package</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell results-cell text-lg" id="naTotalCost">$0.00</td>
                                         <td class="table-cell results-cell text-lg" id="classicTotalCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="premiumTotalCost">$0.00</td>
-                                    </tr>
-                                    <tr><td colspan="5" class="py-2"></td></tr>
-                                    <tr class="bg-green-50">
-                                        <td class="table-cell text-left font-bold text-lg">SAVINGS</td>
-                                        <td class="table-cell text-gray-400">-</td>
-                                        <td class="table-cell results-cell text-lg" id="naSavings">$0.00</td>
                                         <td class="table-cell results-cell text-lg" id="classicSavings">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-cell text-left font-semibold">Premium Package</td>
+                                        <td class="table-cell font-medium">$19</td>
+                                        <td class="table-cell results-cell" id="premiumPackagePrice">$0.00</td>
+                                        <td class="table-cell results-cell" id="premiumExtraCost">$0.00</td>
+                                        <td class="table-cell results-cell text-lg" id="premiumTotalCost">$0.00</td>
                                         <td class="table-cell results-cell text-lg" id="premiumSavings">$0.00</td>
                                     </tr>
                                 </tbody>
@@ -333,9 +359,9 @@
                         </div>
                     </div>
 
-                    <!-- Section 4: Group Calculator -->
+                    <!-- Section 6: Group Calculator -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">4. Optional Group Cost Calculator</h3>
+                        <h3 class="text-lg font-bold mb-3 text-gray-800">6. Optional Group Cost Calculator</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full min-w-max text-center">
                                 <thead>
@@ -518,20 +544,20 @@
     <script>
         // --- DATA AND CONFIGURATION ---
         const drinkData = [
-            { id: 'water', name: 'Bottled Water / Soda', price: 5, defaultCount: 4 },
-            { id: 'coffee', name: 'Specialty Coffee / Tea', price: 6, defaultCount: 2 },
-            { id: 'juice', name: 'Fresh Juices / Smoothies', price: 7, defaultCount: 1 },
+            { id: 'water', name: 'Bottled Water / Soda', price: 4, defaultCount: 4 },
+            { id: 'coffee', name: 'Specialty Coffee / Tea', price: 5, defaultCount: 2 },
+            { id: 'juice', name: 'Fresh Juices / Smoothies', price: 6, defaultCount: 1 },
             { id: 'energy', name: 'Energy Drinks', price: 7, defaultCount: 0 },
             { id: 'beer', name: 'Beer', price: 8, defaultCount: 2 },
-            { id: 'wine', name: 'Wine by the Glass', price: 12, defaultCount: 3 },
-            { id: 'cocktails', name: 'Cocktails / Spirits', price: 14, defaultCount: 3 },
-            { id: 'premium', name: 'Premium Cocktails / Wine', price: 20, defaultCount: 1 }
+            { id: 'wine', name: 'Wine by the Glass', price: 10, defaultCount: 3 },
+            { id: 'cocktails', name: 'Cocktails / Spirits', price: 12, defaultCount: 3 },
+            { id: 'premium', name: 'Premium Cocktails / Wine', price: 17, defaultCount: 1 }
         ];
 
         const packageData = {
-            nonAlcoholic: { name: 'Non-Alcoholic', dailyRate: 44.60, limit: 7 },
-            classic: { name: 'Classic', dailyRate: 84.60, limit: 10 },
-            premium: { name: 'Premium', dailyRate: 99.99, limit: 19 }
+            nonAlcoholic: { name: 'Non-Alcoholic', limit: 7 },
+            classic: { name: 'Classic', limit: 10 },
+            premium: { name: 'Premium', limit: 19 }
         };
 
         // --- INITIALIZATION ---
@@ -579,8 +605,14 @@
         function calculateAll() {
             // 1. Get user inputs
             const cruiseLength = parseFloat(document.getElementById('cruiseLength').value) || 0;
-            const discount = parseFloat(document.getElementById('packageDiscount').value) / 100 || 0;
             const gratuity = parseFloat(document.getElementById('gratuity').value) / 100 || 0;
+
+            const naPackagePrice = parseFloat(document.getElementById('naPackagePrice').value) || 0;
+            const naPackageDiscount = parseFloat(document.getElementById('naPackageDiscount').value) / 100 || 0;
+            const classicPackagePrice = parseFloat(document.getElementById('classicPackagePrice').value) || 0;
+            const classicPackageDiscount = parseFloat(document.getElementById('classicPackageDiscount').value) / 100 || 0;
+            const premiumPackagePrice = parseFloat(document.getElementById('premiumPackagePrice').value) || 0;
+            const premiumPackageDiscount = parseFloat(document.getElementById('premiumPackageDiscount').value) / 100 || 0;
 
             const dailyDrinks = drinkData.map(d => ({
                 ...d,
@@ -592,9 +624,9 @@
             const totalPayGoCost = dailyCostPreTip * cruiseLength * (1 + gratuity);
 
             // 3. Calculate costs for each package
-            const naResult = calculatePackageCost(packageData.nonAlcoholic, dailyDrinks, cruiseLength, discount, gratuity, totalPayGoCost);
-            const classicResult = calculatePackageCost(packageData.classic, dailyDrinks, cruiseLength, discount, gratuity, totalPayGoCost);
-            const premiumResult = calculatePackageCost(packageData.premium, dailyDrinks, cruiseLength, discount, gratuity, totalPayGoCost);
+            const naResult = calculatePackageCost(naPackagePrice, naPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'nonAlcoholic');
+            const classicResult = calculatePackageCost(classicPackagePrice, classicPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'classic');
+            const premiumResult = calculatePackageCost(premiumPackagePrice, premiumPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'premium');
 
             // 4. Calculate group costs
             const groupCosts = calculateGroupCosts({
@@ -615,13 +647,17 @@
             });
         }
 
-        function calculatePackageCost(packageInfo, dailyDrinks, length, discount, tip, payGoTotal) {
+        function calculatePackageCost(packagePrice, discount, dailyDrinks, length, tip, payGoTotal, packageType) {
             // Calculate the base price of the package itself
-            const packagePrice = packageInfo.dailyRate * length * (1 - discount) * (1 + tip);
+            const packagePriceAfterDiscount = packagePrice * (1 - discount);
+            const packagePriceWithTip = packagePriceAfterDiscount * length * (1 + tip);
+
+            // Get the correct limit for this package type
+            const packageLimit = packageData[packageType].limit;
 
             // Calculate extra costs for drinks that exceed the package's price limit
             const extraCosts = dailyDrinks.reduce((sum, drink) => {
-                if (drink.price > packageInfo.limit && drink.count > 0) {
+                if (drink.price > packageLimit && drink.count > 0) {
                     // The full cost of the drink is extra
                     const dailyExtra = drink.count * drink.price;
                     return sum + dailyExtra;
@@ -629,10 +665,10 @@
                 return sum;
             }, 0) * length * (1 + tip);
 
-            const totalCost = packagePrice + extraCosts;
+            const totalCost = packagePriceWithTip + extraCosts;
             const savings = payGoTotal - totalCost;
 
-            return { packagePrice, extraCosts, totalCost, savings };
+            return { packagePrice: packagePriceWithTip, extraCosts, totalCost, savings };
         }
 
         function calculateGroupCosts(costs) {
@@ -661,10 +697,11 @@
                 cell.classList.toggle('savings-negative', value < 0);
             };
 
-            // Section 3: Per-Person Analysis
+            // Section 4: Pay-As-You-Go Analysis
             document.getElementById('paygoDailyCost').textContent = format(results.dailyCostPreTip);
             document.getElementById('paygoTotalCost').textContent = format(results.totalPayGoCost);
             
+            // Section 5: Drink Package Analysis
             document.getElementById('naPackagePrice').textContent = format(results.naResult.packagePrice);
             document.getElementById('naExtraCost').textContent = format(results.naResult.extraCosts);
             document.getElementById('naTotalCost').textContent = format(results.naResult.totalCost);
@@ -680,7 +717,7 @@
             document.getElementById('premiumTotalCost').textContent = format(results.premiumResult.totalCost);
             updateSavingsCell('premiumSavings', results.premiumResult.savings);
 
-            // Section 4: Group Calculator
+            // Section 6: Group Calculator
             document.getElementById('groupPaygoCost').textContent = format(results.totalPayGoCost);
             document.getElementById('groupNaCost').textContent = format(results.naResult.totalCost);
             document.getElementById('groupClassicCost').textContent = format(results.classicResult.totalCost);
