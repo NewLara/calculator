@@ -218,13 +218,15 @@
             </div>
 
             <!-- Main Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
-                <!-- Left Column: Inputs -->
-                <div class="lg:col-span-1 space-y-4">
+                <!-- Left Column: Pay-As-You-Go Container -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Pay-As-You-Go Analysis</h3>
+                    
                     <!-- Section 1: Cruise Details -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">1. Your Cruise Details</h3>
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">1. Your Cruise Details</h4>
                         <div class="space-y-3">
                             <div>
                                 <label for="cruiseLength" class="font-semibold block mb-1">Cruise Length (Days)</label>
@@ -239,24 +241,9 @@
                         </div>
                     </div>
 
-                    <!-- Section 2: Drink Package Pricing -->
+                    <!-- Section 2: Daily Drinks -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">2. Drink Package Pricing</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <label for="drinkPackagePrice" class="font-semibold block mb-1">Drink Package - Original Price ($/day)</label>
-                                <input type="number" id="drinkPackagePrice" class="input-field" value="80.99" min="0" step="0.01">
-                            </div>
-                            <div>
-                                <label for="drinkPackageDiscount" class="font-semibold block mb-1">Drink Package Discount (%)</label>
-                                <input type="number" id="drinkPackageDiscount" class="input-field" value="10" min="0" max="100">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section 3: Daily Drinks -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">3. Your Daily Drinks</h3>
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">2. Your Daily Drinks</h4>
                         <table class="w-full text-left">
                             <thead>
                                 <tr>
@@ -269,13 +256,10 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
 
-                <!-- Right Column: Results -->
-                <div class="lg:col-span-2 space-y-4">
-                    <!-- Section 4: Pay-As-You-Go Analysis -->
+                    <!-- Section 3: Pay-As-You-Go Analysis -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">4. Pay-As-You-Go Cost Analysis</h3>
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">3. Pay-As-You-Go Cost Analysis</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full min-w-max text-center">
                                 <thead>
@@ -298,9 +282,52 @@
                         </div>
                     </div>
 
-                    <!-- Section 5: Drink Package Analysis -->
+                    <!-- Section 4: Pay-As-You-Go Group Calculator -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">5. Drink Package Cost Analysis</h3>
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">4. Pay-As-You-Go Group Calculator</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-max text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="table-cell header-cell text-left">Cost Per Person</th>
+                                        <th class="table-cell header-cell"># of People</th>
+                                        <th class="table-cell header-cell">Group Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-cell results-cell" id="groupPaygoCost">$0.00</td>
+                                        <td class="table-cell"><input type="number" id="groupPaygoNum" class="input-field" value="0" min="0"></td>
+                                        <td class="table-cell results-cell" id="groupPaygoSubtotal">$0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Drink Package Container -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Drink Package Analysis</h3>
+                    
+                    <!-- Section 5: Drink Package Pricing -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">1. Drink Package Pricing</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label for="drinkPackagePrice" class="font-semibold block mb-1">Drink Package - Original Price ($/day)</label>
+                                <input type="number" id="drinkPackagePrice" class="input-field" value="80.99" min="0" step="0.01">
+                            </div>
+                            <div>
+                                <label for="drinkPackageDiscount" class="font-semibold block mb-1">Drink Package Discount (%)</label>
+                                <input type="number" id="drinkPackageDiscount" class="input-field" value="10" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Drink Package Analysis -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">2. Drink Package Cost Analysis</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full min-w-max text-center">
                                 <thead>
@@ -327,9 +354,32 @@
                         </div>
                     </div>
 
-                    <!-- Section 6: Group Calculator -->
+                    <!-- Section 7: Drink Package Group Calculator -->
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold mb-3 text-gray-800">6. Optional Group Cost Calculator</h3>
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">3. Drink Package Group Calculator</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-max text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="table-cell header-cell text-left">Cost Per Person</th>
+                                        <th class="table-cell header-cell"># of People</th>
+                                        <th class="table-cell header-cell">Group Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-cell results-cell" id="groupDrinkCost">$0.00</td>
+                                        <td class="table-cell"><input type="number" id="groupDrinkNum" class="input-field" value="0" min="0"></td>
+                                        <td class="table-cell results-cell" id="groupDrinkSubtotal">$0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Section 8: Combined Group Calculator -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-lg font-bold mb-3 text-gray-800">4. Combined Group Cost Calculator</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full min-w-max text-center">
                                 <thead>
@@ -343,15 +393,15 @@
                                 <tbody>
                                     <tr>
                                         <td class="table-cell text-left font-semibold">Pay-As-You-Go</td>
-                                        <td class="table-cell results-cell" id="groupPaygoCost">$0.00</td>
-                                        <td class="table-cell"><input type="number" id="groupPaygoNum" class="input-field" value="0" min="0"></td>
-                                        <td class="table-cell results-cell" id="groupPaygoSubtotal">$0.00</td>
+                                        <td class="table-cell results-cell" id="combinedPaygoCost">$0.00</td>
+                                        <td class="table-cell"><input type="number" id="combinedPaygoNum" class="input-field" value="0" min="0"></td>
+                                        <td class="table-cell results-cell" id="combinedPaygoSubtotal">$0.00</td>
                                     </tr>
                                     <tr>
                                         <td class="table-cell text-left font-semibold">Drink Package</td>
-                                        <td class="table-cell results-cell" id="groupDrinkCost">$0.00</td>
-                                        <td class="table-cell"><input type="number" id="groupDrinkNum" class="input-field" value="0" min="0"></td>
-                                        <td class="table-cell results-cell" id="groupDrinkSubtotal">$0.00</td>
+                                        <td class="table-cell results-cell" id="combinedDrinkCost">$0.00</td>
+                                        <td class="table-cell"><input type="number" id="combinedDrinkNum" class="input-field" value="0" min="0"></td>
+                                        <td class="table-cell results-cell" id="combinedDrinkSubtotal">$0.00</td>
                                     </tr>
                                     <tr class="bg-gray-100">
                                         <td class="table-cell text-left font-bold" colspan="3">TOTAL GROUP COST</td>
@@ -618,12 +668,16 @@
         function calculateGroupCosts(costs) {
             const paygoNum = parseFloat(document.getElementById('groupPaygoNum').value) || 0;
             const drinkNum = parseFloat(document.getElementById('groupDrinkNum').value) || 0;
+            const combinedPaygoNum = parseFloat(document.getElementById('combinedPaygoNum').value) || 0;
+            const combinedDrinkNum = parseFloat(document.getElementById('combinedDrinkNum').value) || 0;
 
             const paygoSubtotal = costs.paygo * paygoNum;
             const drinkSubtotal = costs.drink * drinkNum;
-            const total = paygoSubtotal + drinkSubtotal;
+            const combinedPaygoSubtotal = costs.paygo * combinedPaygoNum;
+            const combinedDrinkSubtotal = costs.drink * combinedDrinkNum;
+            const total = combinedPaygoSubtotal + combinedDrinkSubtotal;
 
-            return { paygoSubtotal, drinkSubtotal, total };
+            return { paygoSubtotal, drinkSubtotal, combinedPaygoSubtotal, combinedDrinkSubtotal, total };
         }
 
         // --- UI UPDATE ---
@@ -647,12 +701,19 @@
             document.getElementById('drinkTotalCost').textContent = format(results.drinkResult.totalCost);
             updateSavingsCell('drinkSavings', results.drinkResult.savings);
 
-            // Section 6: Group Calculator
+            // Section 4: Pay-As-You-Go Group Calculator
             document.getElementById('groupPaygoCost').textContent = format(results.totalPayGoCost);
-            document.getElementById('groupDrinkCost').textContent = format(results.drinkResult.totalCost);
-
             document.getElementById('groupPaygoSubtotal').textContent = format(results.groupCosts.paygoSubtotal);
+
+            // Section 7: Drink Package Group Calculator
+            document.getElementById('groupDrinkCost').textContent = format(results.drinkResult.totalCost);
             document.getElementById('groupDrinkSubtotal').textContent = format(results.groupCosts.drinkSubtotal);
+
+            // Section 8: Combined Group Calculator
+            document.getElementById('combinedPaygoCost').textContent = format(results.totalPayGoCost);
+            document.getElementById('combinedDrinkCost').textContent = format(results.drinkResult.totalCost);
+            document.getElementById('combinedPaygoSubtotal').textContent = format(results.groupCosts.combinedPaygoSubtotal);
+            document.getElementById('combinedDrinkSubtotal').textContent = format(results.groupCosts.combinedDrinkSubtotal);
             document.getElementById('groupTotalCost').textContent = format(results.groupCosts.total);
         }
     </script>
