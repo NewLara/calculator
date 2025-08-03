@@ -244,28 +244,12 @@
                         <h3 class="text-lg font-bold mb-3 text-gray-800">2. Drink Package Pricing</h3>
                         <div class="space-y-3">
                             <div>
-                                <label for="naPackagePrice" class="font-semibold block mb-1">Non-Alcoholic Package ($/day)</label>
-                                <input type="number" id="naPackagePrice" class="input-field" value="39.99" min="0" step="0.01">
+                                <label for="drinkPackagePrice" class="font-semibold block mb-1">Drink Package - Original Price ($/day)</label>
+                                <input type="number" id="drinkPackagePrice" class="input-field" value="80.99" min="0" step="0.01">
                             </div>
                             <div>
-                                <label for="naPackageDiscount" class="font-semibold block mb-1">Non-Alcoholic Discount (%)</label>
-                                <input type="number" id="naPackageDiscount" class="input-field" value="10" min="0" max="100">
-                            </div>
-                            <div>
-                                <label for="classicPackagePrice" class="font-semibold block mb-1">Classic Package ($/day)</label>
-                                <input type="number" id="classicPackagePrice" class="input-field" value="80.99" min="0" step="0.01">
-                            </div>
-                            <div>
-                                <label for="classicPackageDiscount" class="font-semibold block mb-1">Classic Discount (%)</label>
-                                <input type="number" id="classicPackageDiscount" class="input-field" value="10" min="0" max="100">
-                            </div>
-                            <div>
-                                <label for="premiumPackagePrice" class="font-semibold block mb-1">Premium Package ($/day)</label>
-                                <input type="number" id="premiumPackagePrice" class="input-field" value="93.99" min="0" step="0.01">
-                            </div>
-                            <div>
-                                <label for="premiumPackageDiscount" class="font-semibold block mb-1">Premium Discount (%)</label>
-                                <input type="number" id="premiumPackageDiscount" class="input-field" value="10" min="0" max="100">
+                                <label for="drinkPackageDiscount" class="font-semibold block mb-1">Drink Package Discount (%)</label>
+                                <input type="number" id="drinkPackageDiscount" class="input-field" value="10" min="0" max="100">
                             </div>
                         </div>
                     </div>
@@ -331,28 +315,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="table-cell text-left font-semibold">Non-Alcoholic</td>
-                                        <td class="table-cell font-medium">$7</td>
-                                        <td class="table-cell results-cell" id="naPackagePrice">$0.00</td>
-                                        <td class="table-cell results-cell" id="naExtraCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="naTotalCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="naSavings">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-cell text-left font-semibold">Classic Package</td>
+                                        <td class="table-cell text-left font-semibold">Drink Package</td>
                                         <td class="table-cell font-medium">$10</td>
-                                        <td class="table-cell results-cell" id="classicPackagePrice">$0.00</td>
-                                        <td class="table-cell results-cell" id="classicExtraCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="classicTotalCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="classicSavings">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-cell text-left font-semibold">Premium Package</td>
-                                        <td class="table-cell font-medium">$19</td>
-                                        <td class="table-cell results-cell" id="premiumPackagePrice">$0.00</td>
-                                        <td class="table-cell results-cell" id="premiumExtraCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="premiumTotalCost">$0.00</td>
-                                        <td class="table-cell results-cell text-lg" id="premiumSavings">$0.00</td>
+                                        <td class="table-cell results-cell" id="drinkPackagePrice">$0.00</td>
+                                        <td class="table-cell results-cell" id="drinkExtraCost">$0.00</td>
+                                        <td class="table-cell results-cell text-lg" id="drinkTotalCost">$0.00</td>
+                                        <td class="table-cell results-cell text-lg" id="drinkSavings">$0.00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -380,22 +348,10 @@
                                         <td class="table-cell results-cell" id="groupPaygoSubtotal">$0.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="table-cell text-left font-semibold">Non-Alcoholic</td>
-                                        <td class="table-cell results-cell" id="groupNaCost">$0.00</td>
-                                        <td class="table-cell"><input type="number" id="groupNaNum" class="input-field" value="0" min="0"></td>
-                                        <td class="table-cell results-cell" id="groupNaSubtotal">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-cell text-left font-semibold">Classic</td>
-                                        <td class="table-cell results-cell" id="groupClassicCost">$0.00</td>
-                                        <td class="table-cell"><input type="number" id="groupClassicNum" class="input-field" value="0" min="0"></td>
-                                        <td class="table-cell results-cell" id="groupClassicSubtotal">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-cell text-left font-semibold">Premium</td>
-                                        <td class="table-cell results-cell" id="groupPremiumCost">$0.00</td>
-                                        <td class="table-cell"><input type="number" id="groupPremiumNum" class="input-field" value="0" min="0"></td>
-                                        <td class="table-cell results-cell" id="groupPremiumSubtotal">$0.00</td>
+                                        <td class="table-cell text-left font-semibold">Drink Package</td>
+                                        <td class="table-cell results-cell" id="groupDrinkCost">$0.00</td>
+                                        <td class="table-cell"><input type="number" id="groupDrinkNum" class="input-field" value="0" min="0"></td>
+                                        <td class="table-cell results-cell" id="groupDrinkSubtotal">$0.00</td>
                                     </tr>
                                     <tr class="bg-gray-100">
                                         <td class="table-cell text-left font-bold" colspan="3">TOTAL GROUP COST</td>
@@ -555,9 +511,7 @@
         ];
 
         const packageData = {
-            nonAlcoholic: { name: 'Non-Alcoholic', limit: 7 },
-            classic: { name: 'Classic', limit: 10 },
-            premium: { name: 'Premium', limit: 19 }
+            drink: { name: 'Drink Package', limit: 10 }
         };
 
         // --- INITIALIZATION ---
@@ -607,12 +561,8 @@
             const cruiseLength = parseFloat(document.getElementById('cruiseLength').value) || 0;
             const gratuity = parseFloat(document.getElementById('gratuity').value) / 100 || 0;
 
-            const naPackagePrice = parseFloat(document.getElementById('naPackagePrice').value) || 0;
-            const naPackageDiscount = parseFloat(document.getElementById('naPackageDiscount').value) / 100 || 0;
-            const classicPackagePrice = parseFloat(document.getElementById('classicPackagePrice').value) || 0;
-            const classicPackageDiscount = parseFloat(document.getElementById('classicPackageDiscount').value) / 100 || 0;
-            const premiumPackagePrice = parseFloat(document.getElementById('premiumPackagePrice').value) || 0;
-            const premiumPackageDiscount = parseFloat(document.getElementById('premiumPackageDiscount').value) / 100 || 0;
+            const drinkPackagePrice = parseFloat(document.getElementById('drinkPackagePrice').value) || 0;
+            const drinkPackageDiscount = parseFloat(document.getElementById('drinkPackageDiscount').value) / 100 || 0;
 
             const dailyDrinks = drinkData.map(d => ({
                 ...d,
@@ -623,26 +573,20 @@
             const dailyCostPreTip = dailyDrinks.reduce((sum, drink) => sum + (drink.count * drink.price), 0);
             const totalPayGoCost = dailyCostPreTip * cruiseLength * (1 + gratuity);
 
-            // 3. Calculate costs for each package
-            const naResult = calculatePackageCost(naPackagePrice, naPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'nonAlcoholic');
-            const classicResult = calculatePackageCost(classicPackagePrice, classicPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'classic');
-            const premiumResult = calculatePackageCost(premiumPackagePrice, premiumPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'premium');
+            // 3. Calculate costs for drink package
+            const drinkResult = calculatePackageCost(drinkPackagePrice, drinkPackageDiscount, dailyDrinks, cruiseLength, gratuity, totalPayGoCost, 'drink');
 
             // 4. Calculate group costs
             const groupCosts = calculateGroupCosts({
                 paygo: totalPayGoCost,
-                na: naResult.totalCost,
-                classic: classicResult.totalCost,
-                premium: premiumResult.totalCost,
+                drink: drinkResult.totalCost,
             });
 
             // 5. Update the UI
             updateUI({
                 dailyCostPreTip,
                 totalPayGoCost,
-                naResult,
-                classicResult,
-                premiumResult,
+                drinkResult,
                 groupCosts
             });
         }
@@ -673,17 +617,13 @@
 
         function calculateGroupCosts(costs) {
             const paygoNum = parseFloat(document.getElementById('groupPaygoNum').value) || 0;
-            const naNum = parseFloat(document.getElementById('groupNaNum').value) || 0;
-            const classicNum = parseFloat(document.getElementById('groupClassicNum').value) || 0;
-            const premiumNum = parseFloat(document.getElementById('groupPremiumNum').value) || 0;
+            const drinkNum = parseFloat(document.getElementById('groupDrinkNum').value) || 0;
 
             const paygoSubtotal = costs.paygo * paygoNum;
-            const naSubtotal = costs.na * naNum;
-            const classicSubtotal = costs.classic * classicNum;
-            const premiumSubtotal = costs.premium * premiumNum;
-            const total = paygoSubtotal + naSubtotal + classicSubtotal + premiumSubtotal;
+            const drinkSubtotal = costs.drink * drinkNum;
+            const total = paygoSubtotal + drinkSubtotal;
 
-            return { paygoSubtotal, naSubtotal, classicSubtotal, premiumSubtotal, total };
+            return { paygoSubtotal, drinkSubtotal, total };
         }
 
         // --- UI UPDATE ---
@@ -702,31 +642,17 @@
             document.getElementById('paygoTotalCost').textContent = format(results.totalPayGoCost);
             
             // Section 5: Drink Package Analysis
-            document.getElementById('naPackagePrice').textContent = format(results.naResult.packagePrice);
-            document.getElementById('naExtraCost').textContent = format(results.naResult.extraCosts);
-            document.getElementById('naTotalCost').textContent = format(results.naResult.totalCost);
-            updateSavingsCell('naSavings', results.naResult.savings);
-
-            document.getElementById('classicPackagePrice').textContent = format(results.classicResult.packagePrice);
-            document.getElementById('classicExtraCost').textContent = format(results.classicResult.extraCosts);
-            document.getElementById('classicTotalCost').textContent = format(results.classicResult.totalCost);
-            updateSavingsCell('classicSavings', results.classicResult.savings);
-            
-            document.getElementById('premiumPackagePrice').textContent = format(results.premiumResult.packagePrice);
-            document.getElementById('premiumExtraCost').textContent = format(results.premiumResult.extraCosts);
-            document.getElementById('premiumTotalCost').textContent = format(results.premiumResult.totalCost);
-            updateSavingsCell('premiumSavings', results.premiumResult.savings);
+            document.getElementById('drinkPackagePrice').textContent = format(results.drinkResult.packagePrice);
+            document.getElementById('drinkExtraCost').textContent = format(results.drinkResult.extraCosts);
+            document.getElementById('drinkTotalCost').textContent = format(results.drinkResult.totalCost);
+            updateSavingsCell('drinkSavings', results.drinkResult.savings);
 
             // Section 6: Group Calculator
             document.getElementById('groupPaygoCost').textContent = format(results.totalPayGoCost);
-            document.getElementById('groupNaCost').textContent = format(results.naResult.totalCost);
-            document.getElementById('groupClassicCost').textContent = format(results.classicResult.totalCost);
-            document.getElementById('groupPremiumCost').textContent = format(results.premiumResult.totalCost);
+            document.getElementById('groupDrinkCost').textContent = format(results.drinkResult.totalCost);
 
             document.getElementById('groupPaygoSubtotal').textContent = format(results.groupCosts.paygoSubtotal);
-            document.getElementById('groupNaSubtotal').textContent = format(results.groupCosts.naSubtotal);
-            document.getElementById('groupClassicSubtotal').textContent = format(results.groupCosts.classicSubtotal);
-            document.getElementById('groupPremiumSubtotal').textContent = format(results.groupCosts.premiumSubtotal);
+            document.getElementById('groupDrinkSubtotal').textContent = format(results.groupCosts.drinkSubtotal);
             document.getElementById('groupTotalCost').textContent = format(results.groupCosts.total);
         }
     </script>
